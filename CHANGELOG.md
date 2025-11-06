@@ -1,5 +1,19 @@
 ## Changelog
 
+### v1.0.3
+* Ignore changes to identities attached to the VM outside of this module, allowing plans to run without removing them.
+
+### v1.0.2
+* Make the Storage service endpoint of the VPC optional. The Storage endpoint is enabled by default, but it's possible
+  to not enable it by setting `azure_enable_subnet_storage_endpoint` module input variable to `false`.
+* Add support for automatically registering the Rubrik Cloud Cluster with Rubrik Security Cloud. To register the cluster
+  set the `register_cluster_with_rsc` module input variable to `true`.
+* NTP servers can now be specified using a FQDN. Previously they were required to be IP addresses, now both IP addresses
+  and FQDN are allowed.
+* Relax the version constraint for the Azure RM Terraform provider to `>=4.14.0`.
+* Bump the RSC (polaris) Terraform provider from version `~>1.1.1` to `>=1.1.3`.
+* Run `terraform fmt` on the module.
+* 
 ### v1.0.2
 * Make the Storage service endpoint of the VPC optional. The Storage endpoint is enabled by default, but it's possible
   to not enable it by setting `azure_enable_subnet_storage_endpoint` module input variable to `false`.
